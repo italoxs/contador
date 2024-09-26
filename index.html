@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IXS Counter</title>
+
+  <style>
+    * {
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      background: #020617;
+      color: #f8fafc;
+      display: grid;
+      place-items: center;
+    }
+
+    section {
+      background: rgba(255, 255, 255, .2);
+      padding: 20px;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    p {
+      font-size: 100px;
+    }
+
+    button {
+      font-size: 25px;
+      height: 35px;
+      width: 35px;
+      border: 0;
+      border-radius: 50%;
+      line-height: 25%;
+    }
+  </style>
+</head>
+
+<body>
+  <section>
+    <h1>Counter</h1>
+    <p id="result">0</p>
+    <button onclick="decrease()">-</button>
+    <button onclick="increase()">+</button>
+  </section>
+  <script>
+    // estado da aplicação
+    let inicialNumber = 0
+
+    // alteradores de estados da aplicação
+    function increase() {
+      inicialNumber++
+      render()
+    }
+
+    function decrease() {
+      inicialNumber--
+      render()
+    }
+
+    // jogar o estado da aplicação na tela 
+    function render() {
+      const p = document.querySelector("#result")
+      p.innerText = inicialNumber
+    }
+
+    // iniciar
+    render()
+  </script>
+</body>
+
+</html>
